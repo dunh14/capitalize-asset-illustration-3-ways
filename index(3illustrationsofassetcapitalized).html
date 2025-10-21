@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minh họa 3 Kịch bản Vốn hóa Tài sản</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .progress-bar-fill {
+            transition: width 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    
+    <div class="w-full max-w-6xl aspect-[16/9] bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden">
+        <!-- Main Slide Content Area -->
+        <div id="slide-container" class="flex-grow p-8 sm:p-12 flex flex-col justify-center relative">
+
+            <!-- Slide 1: Trang Bìa -->
+            <div class="slide active flex-col items-center justify-center text-center">
+                <div class="bg-blue-600 text-white py-2 px-4 rounded-full text-sm font-semibold mb-6">MINH HỌA THỰC TẾ</div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800">3 Kịch bản Vốn hóa Tài sản</h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl">Giải thích cách mô hình "Cha - Con" xử lý các trường hợp nghiệp vụ khác nhau.</p>
+            </div>
+
+            <!-- Slide 2: Case 1 -->
+            <div class="slide flex-col">
+                <h2 class="text-3xl font-bold text-blue-600 mb-2">Kịch bản 1: 1 Cha - 1 Con</h2>
+                <p class="text-gray-500 mb-6 text-center">Áp dụng cho các tài sản cố định đơn lẻ, có giá trị lớn.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Left: Scenario Description -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-xl text-gray-800 mb-3">Tình huống: Mua sắm Thiết bị</h3>
+                        <p class="text-gray-700">Bộ phận Marketing mua một **máy ảnh chuyên dụng** để sản xuất hình ảnh, trị giá **50.000.000 VNĐ**.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2 mt-4">
+                            <li>**Góc nhìn Tài chính:** Cần **1 mã** để ghi nhận TSCĐ và khấu hao.</li>
+                            <li>**Góc nhìn Vật lý:** Cần **1 tem** để dán lên thiết bị và quản lý.</li>
+                        </ul>
+                    </div>
+                    <!-- Right: Data Structure -->
+                    <div class="bg-blue-50 p-6 rounded-lg border-2 border-dashed border-blue-200">
+                         <h3 class="font-bold text-xl text-blue-800 mb-4 text-center">Cấu trúc trên Hệ thống</h3>
+                         <!-- Parent Asset -->
+                         <div class="bg-white p-4 rounded-lg shadow mb-4">
+                            <p class="font-bold text-lg text-blue-700">Tài sản Cha (Tài chính)</p>
+                            <p><span class="font-semibold">Mã FAM:</span> FAM-MKT-025</p>
+                            <p><span class="font-semibold">Nguyên giá:</span> 50.000.000 VNĐ</p>
+                         </div>
+                         <div class="text-center text-2xl text-blue-400 my-2">↓</div>
+                         <!-- Child Asset -->
+                         <div class="bg-white p-4 rounded-lg shadow">
+                            <p class="font-bold text-lg text-green-700">Tài sản Con (Vật lý)</p>
+                            <p><span class="font-semibold">Asset Code:</span> CAM-PRO-001</p>
+                            <p><span class="font-semibold">Serial:</span> XYZ987ABC</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Case 2 -->
+             <div class="slide flex-col">
+                <h2 class="text-3xl font-bold text-blue-600 mb-2">Kịch bản 2: 1 Cha - Nhiều Con</h2>
+                <p class="text-gray-500 mb-6 text-center">Áp dụng cho các hệ thống gộp, bao gồm cả chi phí cấu thành.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <!-- Left: Scenario Description -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-xl text-gray-800 mb-3">Tình huống: Lắp đặt Hệ thống POS</h3>
+                        <p class="text-gray-700 mb-4">Trang bị cho cửa hàng mới, tổng giá trị **48.500.000 VNĐ**.</p>
+                        <ul class="list-decimal list-inside text-sm text-gray-700 space-y-1">
+                            <li>Máy tính POS (20tr) - <span class="font-semibold text-green-600">Cần Tag</span></li>
+                            <li>Màn hình cảm ứng (10tr) - <span class="font-semibold text-green-600">Cần Tag</span></li>
+                            <li>Máy quét mã vạch (10tr) - <span class="font-semibold text-green-600">Cần Tag</span></li>
+                            <li>Ngăn kéo tiền (5tr) - <span class="font-semibold text-green-600">Cần Tag</span></li>
+                            <li>Chi phí Lắp đặt (2tr) - <span class="font-semibold text-red-600">Không Tag</span></li>
+                            <li>Vật tư phụ (1.5tr) - <span class="font-semibold text-red-600">Không Tag</span></li>
+                        </ul>
+                    </div>
+                    <!-- Right: Data Structure -->
+                    <div class="bg-blue-50 p-6 rounded-lg border-2 border-dashed border-blue-200">
+                         <h3 class="font-bold text-xl text-blue-800 mb-4 text-center">Cấu trúc trên Hệ thống</h3>
+                         <!-- Parent Asset -->
+                         <div class="bg-white p-4 rounded-lg shadow mb-4">
+                            <p class="font-bold text-lg text-blue-700">Tài sản Cha (Tài chính)</p>
+                            <p><span class="font-semibold">Mã FAM:</span> FAM-POS-051</p>
+                            <p><span class="font-semibold">Nguyên giá:</span> 48.500.000 VNĐ (Tổng của 6 hạng mục)</p>
+                         </div>
+                         <div class="text-center text-2xl text-blue-400 my-2">↓</div>
+                         <!-- Child Assets -->
+                         <div class="grid grid-cols-2 gap-2">
+                             <div class="bg-white p-2 rounded shadow text-center"><p class="font-semibold text-green-700 text-sm">POS-PC-002</p></div>
+                             <div class="bg-white p-2 rounded shadow text-center"><p class="font-semibold text-green-700 text-sm">POS-MON-002</p></div>
+                             <div class="bg-white p-2 rounded shadow text-center"><p class="font-semibold text-green-700 text-sm">POS-SCN-002</p></div>
+                             <div class="bg-white p-2 rounded shadow text-center"><p class="font-semibold text-green-700 text-sm">POS-CDR-002</p></div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Case 3 -->
+             <div class="slide flex-col">
+                <h2 class="text-3xl font-bold text-blue-600 mb-2">Kịch bản 3: 1 Cha - Không Con</h2>
+                <p class="text-gray-500 mb-6 text-center">Áp dụng cho các chi phí xây dựng dở dang, tài sản vô hình.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Left: Scenario Description -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-xl text-gray-800 mb-3">Tình huống: Xây dựng Cửa hàng mới</h3>
+                        <p class="text-gray-700">Tập hợp tất cả chi phí xây dựng, sửa chữa lớn trong nhiều tháng để hình thành nên giá trị của cửa hàng.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2 mt-4">
+                            <li>**Nghiệp vụ Kế toán:** Các chi phí được tập hợp vào **TK 241 (XDCB Dở dang)**.</li>
+                            <li>Khi nghiệm thu, toàn bộ giá trị sẽ được kết chuyển sang **TK 211 (TSCĐ)**.</li>
+                            <li>**Góc nhìn Vật lý:** Không có thiết bị đơn lẻ nào để dán tem.</li>
+                        </ul>
+                    </div>
+                    <!-- Right: Data Structure -->
+                    <div class="bg-blue-50 p-6 rounded-lg border-2 border-dashed border-blue-200">
+                         <h3 class="font-bold text-xl text-blue-800 mb-4 text-center">Cấu trúc trên Hệ thống</h3>
+                         <!-- Parent Asset -->
+                         <div class="bg-white p-4 rounded-lg shadow mb-4">
+                            <p class="font-bold text-lg text-blue-700">Tài sản Cha (Tài chính)</p>
+                            <p><span class="font-semibold">Mã FAM:</span> FAM-STORE-010</p>
+                            <p><span class="font-semibold">Nguyên giá:</span> 2.500.000.000 VNĐ (Tổng chi phí dự án)</p>
+                         </div>
+                         <div class="text-center text-2xl text-blue-400 my-2">↓</div>
+                         <!-- No Child Asset -->
+                         <div class="bg-white p-4 rounded-lg shadow text-center">
+                            <p class="font-semibold text-red-700">Không có Tài sản Con (Vật lý) nào được liên kết.</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer with Navigation and Progress Bar -->
+        <div class="bg-gray-50 p-4 border-t border-gray-200">
+            <div class="flex items-center justify-between">
+                <button id="prevBtn" class="bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <div class="flex-grow mx-4">
+                     <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="text-sm font-medium text-gray-600 w-20 text-center">
+                    Slide <span id="currentSlideNum">1</span> / <span id="totalSlidesNum">4</span>
+                </div>
+                <button id="nextBtn" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const currentSlideNum = document.getElementById('currentSlideNum');
+        const totalSlidesNum = document.getElementById('totalSlidesNum');
+        const progressBar = document.getElementById('progressBar');
+
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        totalSlidesNum.textContent = totalSlides;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            currentSlideNum.textContent = index + 1;
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === totalSlides - 1;
+
+            const progressPercentage = ((index + 1) / totalSlides) * 100;
+            progressBar.style.width = `${progressPercentage}%`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+        
+        // Initial setup
+        const initialSlideIndex = 0; // Start at slide 1
+        if (initialSlideIndex < totalSlides && initialSlideIndex >= 0) {
+            currentSlide = initialSlideIndex;
+        }
+        showSlide(currentSlide);
+    });
+</script>
+
+</body>
+</html>
